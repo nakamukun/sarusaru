@@ -12,4 +12,9 @@ class PostController extends Controller
 {
     return view('posts/index')->with(['posts' => $post->getPaginatebylimit(1)]);
 }
+
+public function show(Post $post)
+{
+  dd($post);
+}
 }
