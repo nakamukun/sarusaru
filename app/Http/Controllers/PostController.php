@@ -8,13 +8,17 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-  public function index(Post $post)
-{
-    return view('posts/index')->with(['posts' => $post->getPaginatebylimit(1)]);
-}
 
-public function show(Post $post)
+     public function index(Post $post)
+  {
+     return view('posts.index')->with(['posts' => $post->getPaginateByLimit(1)]);
+
+  }
+  
+  public function show(Post $post)
 {
-  dd($post);
+     return view('posts/show')->with(['post' => $post]);
+ //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
+
 }
 }
